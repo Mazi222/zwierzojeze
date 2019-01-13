@@ -50,7 +50,7 @@
                 var url7 = "<?php Print($url7); ?>";
                 var url8 = "<?php Print($url8); ?>";
                 var url9 = "<?php Print($url9); ?>";
-                test(map,address0,url0);
+                actualLoaction(map,address0,url0);
                 test(map,address1,url1);
                 test(map,address2,url2);
                 test(map,address3,url3);
@@ -62,6 +62,31 @@
                 test(map,address9,url9);
 
 
+            }
+            function actualLoaction(map, address, url) {
+                geocoder = new google.maps.Geocoder();
+                geocoder.geocode({'address': address}, function (results, status) {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        icon: 'blackMarker.png'
+                    });
+                    var infowindow =  new google.maps.InfoWindow({
+                        content: "You are here",
+                        map: map,
+                    });
+                    marker.addListener('click', function () {
+                        window.location.replace(url);
+                    });
+                    marker.addListener('mouseover', function() {
+                        infowindow.open(map, this);
+                    });
+
+                    marker.addListener('mouseout', function() {
+                        infowindow.close();
+                    });
+                });
             }
             function test(map, address, url) {
                 geocoder = new google.maps.Geocoder();

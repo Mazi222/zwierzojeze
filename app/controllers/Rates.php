@@ -55,9 +55,11 @@ public function addBeer()
 
             $style = $_POST['style'];
             $alc = $_POST['alc'];
-            if(!$this->userModelBeers->checkIfBeerExists($beer))
+            try {
+                $this->userModelBeers->addBeer($beer, $style, $alc);
+            } catch (PDOException $e )
             {
-                $this->userModelBeers->addBeer($beer,$alc,$style);
+
             }
 
         }
@@ -69,9 +71,11 @@ public function addBeer()
     else
     {
         $beers = $this->userModelBeers->GetAllBeers();
+        $styles = $this->userModelBeers->GetAllBeerStyles();
         $data =
             [
-                'beers' => $beers
+                'styles' => $styles,
+                'beers'=>$beers
             ];
         $this->view('shops/addbeer',$data);
     }

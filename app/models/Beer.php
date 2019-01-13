@@ -14,6 +14,13 @@ class Beer
 
         return $results;
     }
+    public function getAllBeerStyles()
+    {
+        $this->db->query("SELECT distinct nazwaStylu FROM piwo");
+        $results = $this->db->resultSet();
+
+        return $results;
+    }
 
     public function checkIfBeerExists($beer)
     {

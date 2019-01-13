@@ -23,8 +23,8 @@
             Zawartość alkoholu <input id = "textAdd" type="number" step="0.01" name="alc">
             Styl: <br/>
             <select name="style" id = "beerA" >
-            <?php foreach ($data['beers'] as $beer): ?>
-                <option value = "<?php echo $beer->nazwaStylu; ?>"><?php echo $beer->nazwaStylu; ?></option>
+            <?php foreach ($data['styles'] as $style): ?>
+                <option value = "<?php echo $style->nazwaStylu; ?>"><?php echo $style->nazwaStylu; ?></option>
             <?php endforeach; ?>
             </select>
             <input type="hidden" name="type" value="1">

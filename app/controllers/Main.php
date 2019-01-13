@@ -78,8 +78,8 @@
 
     public function about(){
       $data = [
-        'title' => 'About Us',
-        'description' => ''
+        'title' => 'Beer',
+        'description' => 'BITEhack 2019'
       ];
 
       $this->view('main/about', $data);

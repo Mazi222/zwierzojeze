@@ -10,6 +10,6 @@
   // URL Root
   define('URLROOT', 'http://localhost/je-ozwierz');
   // Site Name
-  define('SITENAME', 'Beer');
+  define('SITENAME', 'KrakowskieKrafty');
   // App Version
   define('APPVERSION', '1.1.0');

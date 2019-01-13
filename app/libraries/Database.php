@@ -61,7 +61,10 @@
 
     // Execute the prepared statement
     public function execute(){
-      return $this->stmt->execute();
+        try {
+            return $this->stmt->execute();
+        } catch (PDOException $e)
+        {}
     }
 
     // Get result set as array of objects

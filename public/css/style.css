@@ -33,6 +33,7 @@ a.add-btn
     padding: 1%;
     height: 550px;
     background-color: beige !important;
+    text-align: center;
 }
 #map {
     height: 99%;

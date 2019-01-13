@@ -1,0 +1,62 @@
+.detailed-summary
+{
+    margin-bottom: 50px;
+}
+
+h3.final-summary
+{
+    margin-bottom: 20px;
+}
+h2.summary
+{
+    margin-bottom: 20px;
+}
+.final-row
+{
+    font-weight: bold;
+}
+.driver-name
+{
+    height: 50px !important;
+}
+.add-btn
+{
+    height: 50px !important;
+    margin-top: 32px;
+}
+a.add-btn
+{
+    padding-top: 14px;
+}
+#mainDiv{
+    width: 100%;
+    padding: 1%;
+    height: 550px;
+    background-color: beige !important;
+}
+#map {
+    height: 99%;
+    width: 49%;
+    float: left;
+}
+#form{
+    width: 49%;
+    margin-top: 10px;
+    margin-left: 2%;
+    float: right;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+input{
+    width: 100%;
+}
+input.submit{
+    width: 20%;
+}
+select{
+    width: 79%;
+}
+

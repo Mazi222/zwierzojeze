@@ -84,4 +84,54 @@
 
       $this->view('main/about', $data);
     }
+
+    public function mypage()
+    {
+        if(!isset($_SESSION['user_id']))
+        {
+            redirect('main');
+        }
+        else
+        { $userId = $_SESSION['user_id'];
+            if(isset($_POST['type']))
+            {
+                if($_POST['type']==1)
+                {
+                    $shop = $_POST['shop'];
+                    if($this->userModel->CheckIfShopAdded($userId,$shop)==0)
+                    {
+                        $this->userModel->AddShopToPreferences($userId,$shop);
+                    }
+                }
+
+            }
+
+                    $id = $_SESSION['user_id'];
+                    $fav_shops = $this->userModel->GetShopsOfUser($id);
+                    $shops = $this->userModel->GetAllShops();
+                    $data['fav_shops'] = $fav_shops;
+                    $data['shops'] = $shops;
+
+
+                    $this->view('main/mypage', $data);
+
+        }
+    }
+    public function delete($shopId)
+    {
+        if (!isset($_SESSION['user_id'])) {
+            redirect('main');
+        } else {
+            $userId = $_SESSION['user_id'];
+            $this->userModel->DeleteShopFromPreferences($userId, $shopId);
+            $id = $_SESSION['user_id'];
+            $fav_shops = $this->userModel->GetShopsOfUser($id);
+            $shops = $this->userModel->GetAllShops();
+            $data['fav_shops'] = $fav_shops;
+            $data['shops'] = $shops;
+
+
+            redirect('main/mypage');
+        }
+    }
   }

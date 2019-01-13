@@ -1,0 +1,57 @@
+#mainDivA{
+    width: 100%;
+    padding: 1%;
+    height: 550px;
+    background-color: beige !important;
+}
+
+#beerA{
+    width: 40%;
+}
+div.chooseBeer{
+    width: 50%;
+    float: left;
+
+}
+div.addBeerA{
+    width: 50%;
+    float: left;
+
+}
+#beerA{
+    padding: 2%;
+    width: 73%;
+    height: 52px!important;
+}
+#submitAdd{
+    height: 52px!important;
+    width: 23%;
+}
+#textAdd{
+    width: 97%;
+}
+
+.gs_header{
+	text-align: center;
+	font-size: 50px;
+	padding-bottom: 20px;
+}
+.gs_piwoHeader{
+	font-weight: bolder; 
+	padding-bottom: 5px;
+}
+.gs_list{
+	list-style: none; 
+	padding-left: 0;
+}
+.gs_beer{
+	display: inline;
+}
+#gs_buttonp{
+	width:40px;
+	text-align: center;
+}
+#gs_buttonm{
+	width:40px;
+	text-align: center;
+}

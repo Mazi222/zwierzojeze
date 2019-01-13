@@ -8,7 +8,7 @@
             <form action="<?php echo URLROOT; ?>/users/changepassword" method="post">
                 <div class="form-group">
                     <label for="old_password">Old password: <sup>*</sup></label>
-                    <input type="text" name="old_password" class="form-control form-control-lg <?php echo (!empty($data['old_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['old_password']; ?>">
+                    <input type="password" name="old_password" class="form-control form-control-lg <?php echo (!empty($data['old_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['old_password']; ?>">
                     <span class="invalid-feedback"><?php echo $data['old_password_err']; ?></span>
                 </div>
                 <div class="form-group">

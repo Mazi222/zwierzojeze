@@ -72,3 +72,13 @@ input.plus{
     height: 30px;
 
 }
+.beerlist
+{
+    list-style-type: none;
+    color: black;
+}
+a.beerlist:hover
+{
+    color: black;
+    font-weight: bold;
+}

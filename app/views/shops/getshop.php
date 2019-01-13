@@ -6,7 +6,9 @@
 <?php foreach ($data['beers'] as $beer): ?>
 <li>
     <div style="display: inline">
-   <h4><?php echo $beer->nazwaPiwa; ?>
+   <h4><?php echo $beer->nazwaPiwa; ?> -
+       <?php echo $beer->nazwaStylu; ?> - alk.
+       <?php echo $beer->zawartoscAlkoholu; ?> %
        <a href="<?php echo URLROOT;?>/rates/rateYes?beer=<?php echo $beer->nazwaPiwa; ?>&shop=<?php echo $data['shop']->idSklepu;?>"><button type="button" class="btn btn-success">+</button></a>
        <a href="<?php echo URLROOT;?>/rates/rateNo?beer=<?php echo $beer->nazwaPiwa; ?>&shop=<?php echo $data['shop']->idSklepu;?>"><button type="button" class="btn btn-danger">-</button></a>
 

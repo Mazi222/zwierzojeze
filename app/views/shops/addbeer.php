@@ -14,7 +14,9 @@
 
         </select>
         <input type="hidden" name="type" value="0">
-        <input type="submit" value = "Wyślij">
+        <input type="hidden" name="shop" value="<?php echo $_GET['shop']; ?>">
+        <input class = "submit" type = "submit", value = "Add"  />
+
 
 </form>
 
@@ -25,16 +27,18 @@
 
 
     Piwo: <input type="text" name="beer">
-    Styl: <select name="style"
+    Styl: <br>   <select name="style"
 
     <?php foreach ($data['beers'] as $beer): ?>
         <option value = "<?php echo $beer->nazwaStylu; ?>"><?php echo $beer->nazwaStylu; ?></option>
 
     <?php endforeach; ?>
 
-    </select>
+    </select><br>
+    Zawartość alkoholu <input type="number" step="0.01" name="alc">
     <input type="hidden" name="type" value="1">
-    <input type="submit" value = "Wyślij">
+    <input type="hidden" name="shop" value="<?php echo $_GET['shop']; ?>">
+    <input class = "submit" type = "submit", value = "Add"  />
 
 </form>
 

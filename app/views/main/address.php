@@ -95,9 +95,9 @@
     <div id = "beers">
         <h2 class = "find"><?php echo $_POST['type']; ?>    </h2>
         <h3> Where to find near <?php echo $_POST['adres']; ?></h3>
-        <ul>
+        <ul class = "beerlist">
         <?php foreach ($data['shops'] as $shop): ?>
-            <li> <?php echo $shop->przedsiebiorca.' - '; echo $shop->ulicaNrLokalu.' ';  echo $shop ->dist.'km'?></li>
+            <a class ="beerlist" href="shops/getshop/<?php echo $shop->idSklepu; ?>"> <li> <?php echo $shop->przedsiebiorca.' - '; echo $shop->ulicaNrLokalu.' ';  echo $shop ->dist.'km'?></li></a>
         <?php endforeach; ?>
         </ul>
 

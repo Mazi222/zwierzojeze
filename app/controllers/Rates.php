@@ -31,9 +31,10 @@ public function rateNo()
     $shopId = $_GET['shop'];
     if($this->userModel->VoteNo($beer,$shopId))
     {
-        $no = $this->userModel->GetNoVotes;
-        $yes = $this->userModel->GetYesVotes;
-        if( $no>$yes && $no>5 )
+        $no = $this->userModel->GetNoVotes($beer,$shopId)->glosyNaNie;
+        print_r($no);
+        $yes = $this->userModel->GetYesVotes($beer,$shopId)->glosyNaTak;
+        if( $no>2*$yes && $no>5 )
         {
             $this->userModel->RemoveBeerFromPlace($beer,$shopId);
         }
@@ -46,6 +47,23 @@ public function addBeer()
 {
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $shop = $_POST['shop'];
+        $beer = $_POST['beer'];
+        if($_POST['type']==1)
+        {
+
+            $style = $_POST['style'];
+            $alc = $_POST['alc'];
+            if(!$this->userModelBeers->checkIfBeerExists($beer))
+            {
+                $this->userModelBeers->addBeer($beer,$alc,$style);
+            }
+
+        }
+        $this->userModelBeers->addBeerToShop($beer,$shop);
+        flash('vote_added', 'Thank you for adding beer!');
+        redirect('shops/getshop/'.$shop);
 
     }
     else
